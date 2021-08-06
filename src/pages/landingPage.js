@@ -1,15 +1,47 @@
 import React from "react";
+import { useState, useEffect}  from 'react'
 import Card from '../components/card'
 
 import Carousel from "../components/carousal";
 
+
 const LandingPage = () => {
-    const images = [
-        'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
-        'https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80',
-        'https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80',
-        'https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80'
-    ]
+    const [page, setPage] = useState(1);
+    const [data, setData] = useState(1);
+    const [isRunning , setIsRunning] = useState()
+    const [isLoading , setIsLoading] = useState(true)
+
+    const fetchData = () => {
+        return fetch("https://randomuser.me/api/?results=10")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                setData(data)
+                setIsLoading(false)
+            });
+    }
+    useEffect(() => {
+        if(page % 8 ===0) {
+            setIsLoading(true)
+            fetchData()
+
+        }
+        if (page ===1) {
+            fetchData()
+        }
+    },[page])
+
+
+
+
+
+
+
+
+
+    if (isLoading) {
+        return <div className="container-fluid mt-10 text-center">Loading</div>;
+    }
 
     return (
         <>
@@ -32,49 +64,24 @@ const LandingPage = () => {
 
         </div>
             <div className="container px-lg-10">
+                {isLoading &&
+                <div>Loading</div>
+                }
                 <Carousel
                     show={3}
+                    setPage={setPage}
+                    page={page}
                 >
+
+                    {data.results.map((user) => (
                     <div>
                         <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
+                            <Card user={user}/>
                         </div>
                     </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{padding: 8, maxWidth: 350}}>
-                            <Card />
-                        </div>
-                    </div>
+                        ))}
+
+
                 </Carousel>
             </div>
 

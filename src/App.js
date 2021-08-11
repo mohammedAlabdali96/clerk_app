@@ -1,17 +1,35 @@
 import LandingPage from "./pages/landingPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {useTheme} from "./theme/useTheme";
+import React, {useState} from "react";
+import {ThemeProvider} from 'styled-components';
+import {GlobalStyles} from "./theme/GlobalStyles";
+import CreateThemeContent from "./CreateThemeContent";
 
 function App() {
-  return (
-      <Router>
-          <header className="my-4">
-              <h3 className="text-center">Clerk App</h3>
-          </header>
-        <Switch>
-          <Route exact path="/" component={() => <LandingPage />} />
-        </Switch>
-      </Router>
-  );
+    const {theme, themeLoaded, setMode} = useTheme();
+    const [newTheme, setNewTheme] = useState(theme);
+    if(!theme) return null
+    const createTheme = (t) => {
+        setNewTheme(t);
+        setMode(t);
+    }
+
+    if (!themeLoaded) return null;
+
+    return (
+        <>
+            {themeLoaded && <ThemeProvider theme={theme}>
+                <GlobalStyles/>
+
+                <header className="my-4">
+                    <CreateThemeContent newTheme={newTheme} ccreate={createTheme}/>
+                </header>
+                <LandingPage/>
+
+            </ThemeProvider>
+            }
+        </>
+    );
 }
 
 export default App;

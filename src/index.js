@@ -7,7 +7,7 @@ import { setToLS } from './utils/storage';
 
 
 const Index = () => {
-    setToLS('all-themes', themes.default);
+    setToLS('defaultTheme', {bgColor: "#FFFFFF"});
     return(
         <App />
     )

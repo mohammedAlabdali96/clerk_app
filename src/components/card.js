@@ -13,22 +13,22 @@ const Card = ({user}) => {
     return (
         <>
 
-                    <article className="border py-5 card-mosdd ">
+                    <article className="border py-5 mx-2 card-carousal">
                         <div className="d-flex justify-content-center align-content-center">
                             <img width="100" height="100" src={user.picture.medium} className="rounded-circle"/>
                         </div>
-                        <div className="px-9 mt-5">
+                        <div className=" mt-5">
                             <div className="d-flex justify-content-start align-content-center my-2">
-                                <h6 className="text-left">name:{user.name.first}</h6>
+                                <p className="text-left small "><strong>Name:</strong><span className="ml-1">{user.name.first}</span></p>
                             </div>
                             <div className="d-flex justify-content-start align-content-center my-2">
-                                <h6 className="text-left">emil:{user.email}</h6>
+                                <p className="text-left small"><strong>Emil:</strong><span className="ml-1">{user.email}</span></p>
                             </div>
                             <div className="d-flex justify-content-start align-content-center my-2">
-                                <h6 className="text-left">Phone Number: {user.phone}</h6>
+                                <p className="text-left small"><strong>Phone Number:</strong><span className="ml-1">{user.phone}</span></p>
                             </div>
                             <div className="d-flex justify-content-start align-content-center my-2">
-                                <h6 className="text-left">location: {user.location.country} {user.location.state} {user.location.street.name} {user.location.street.number}</h6>
+                                <p className="text-left small"><strong>Location:</strong><span className="ml-1">{user.location.country}</span>{user.location.state}<span className="ml-1">{user.location.street.name}</span>{user.location.street.number}</p>
                             </div>
                         </div>
                     </article>

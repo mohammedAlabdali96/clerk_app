@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { setToLS, getFromLS } from '../utils/storage';
 
-export const useTheme = () => {
-    const themes = getFromLS('all-themes');
-    const [theme, setTheme] = useState(themes.data);
+export const useTheme = (color) => {
+    const defaultTheme = getFromLS('defaultTheme');
+    const [theme, setTheme] = useState(defaultTheme);
     const [themeLoaded, setThemeLoaded] = useState(false);
+    const [themeIsSet, setThemeIsSet] = useState(false)
 
     const setMode = mode => {
         setToLS('theme', mode)
@@ -14,9 +15,9 @@ export const useTheme = () => {
 
     useEffect(() => {
         const localTheme = getFromLS('theme');
-        localTheme ? setTheme(localTheme) : setTheme(themes.data);
+        localTheme ? setTheme(localTheme) : setTheme(defaultTheme);
         setThemeLoaded(true);
-    }, [themeLoaded]);
+    }, []);
 
     return { theme, themeLoaded, setMode };
 };

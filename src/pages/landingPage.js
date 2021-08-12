@@ -44,14 +44,14 @@ const LandingPage = () => {
                 <div>Loading</div>
                 }
                 <Carousel
-                    show={3}
+                    show={2}
                     setPage={setPage}
                     page={page}
                 >
 
                     {data.results.map((user, i) => (
-                    <div key={i}>
-                        <div style={{padding: 8, maxWidth: 350}}>
+                    <div className="" key={i}>
+                        <div className="d-flex align-content-stretch" >
                             <Card user={user}/>
                         </div>
                     </div>

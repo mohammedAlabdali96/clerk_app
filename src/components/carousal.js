@@ -72,7 +72,9 @@ const Carousel = (props) => {
                         className={`carousel-content show-${show}`}
                         style={{ transform: `translateX(-${currentIndex * (100 / show)}%)` }}
                     >
+                        <div className=" d-flex align-content-stretch ">
                         {children}
+                        </div>
                     </div>
                 </div>
                 {/* You can alwas change the content of the button to other things */}

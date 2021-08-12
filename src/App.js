@@ -8,21 +8,21 @@ import CreateThemeContent from "./CreateThemeContent";
 function App() {
     const {theme, themeLoaded, setMode} = useTheme();
     const [newTheme, setNewTheme] = useState(theme);
-    if(!theme) return null
-    const createTheme = (t) => {
+    if (!themeLoaded) return null;
+    if(!theme) return  null
+    const setColor = (t) => {
         setNewTheme(t);
         setMode(t);
     }
 
-    if (!themeLoaded) return null;
 
     return (
         <>
             {themeLoaded && <ThemeProvider theme={theme}>
                 <GlobalStyles/>
 
-                <header className="my-4">
-                    <CreateThemeContent newTheme={newTheme} ccreate={createTheme}/>
+                <header className="my-4 container-fluid">
+                    <CreateThemeContent newTheme={newTheme} setColor={setColor}/>
                 </header>
                 <LandingPage/>
 

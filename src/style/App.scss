@@ -3,6 +3,10 @@
   padding-right: 57px;
   height: 400px;
   width: 300px;
+  @include media-breakpoint-down(md) {
+    width: 400px;
+
+  }
 }
 
 .width-md-25 {

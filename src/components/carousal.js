@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './carousel.css'
 
 const Carousel = (props) => {
     const {children, show, setPage, page} = props
@@ -59,8 +58,8 @@ const Carousel = (props) => {
                 {/* You can alwas change the content of the button to other things */}
                 {
                     currentIndex > 0 &&
-                    <button onClick={prev} className="btn btn-transparent">
-                        &lt;
+                    <button onClick={prev} className="arrow-btn">
+                        prev &lt;
                     </button>
                 }
                 <div
@@ -72,7 +71,7 @@ const Carousel = (props) => {
                         className={`carousel-content show-${show}`}
                         style={{ transform: `translateX(-${currentIndex * (100 / show)}%)` }}
                     >
-                        <div className=" d-flex align-content-stretch ">
+                        <div className=" d-flex align-content-stretch">
                         {children}
                         </div>
                     </div>
@@ -80,8 +79,8 @@ const Carousel = (props) => {
                 {/* You can alwas change the content of the button to other things */}
                 {
                     currentIndex < (length - show) &&
-                    <button onClick={next} className="btn btn-transparent">
-                        &gt;
+                    <button onClick={next} className="arrow-btn">
+                        next &gt;
                     </button>
                 }
             </div>

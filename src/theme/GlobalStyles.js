@@ -7,7 +7,4 @@ export const GlobalStyles = createGlobalStyle`
     input {
     background-color: ${({ theme }) => theme.bgColor}
   }
-   label {
-    background-color: ${({ theme }) => theme.bgColor}
-  }
 `;

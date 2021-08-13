@@ -70,3 +70,10 @@
         display: none;
     }
 }
+
+.arrow-btn {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    font-weight: bold;
+}

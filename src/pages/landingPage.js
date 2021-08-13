@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect}  from 'react'
+import useWindowSize from "../hooks/useWindowSize";
 import Card from '../components/card'
 import Carousel from "../components/carousal";
 
@@ -8,6 +9,8 @@ const LandingPage = () => {
     const [page, setPage] = useState(1);
     const [data, setData] = useState(1);
     const [isLoading , setIsLoading] = useState(true)
+    const windowSize = useWindowSize();
+
 
 
     const fetchData = () => {
@@ -44,7 +47,7 @@ const LandingPage = () => {
                 <div>Loading</div>
                 }
                 <Carousel
-                    show={2}
+                    show={windowSize === 'sm' || windowSize === 'md' ? 1 : 3 }
                     setPage={setPage}
                     page={page}
                 >

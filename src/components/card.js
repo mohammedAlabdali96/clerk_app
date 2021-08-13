@@ -28,7 +28,7 @@ const Card = ({user}) => {
                                 <p className="text-left small"><strong>Phone Number:</strong><span className="ml-1">{user.phone}</span></p>
                             </div>
                             <div className="d-flex justify-content-start align-content-center my-2">
-                                <p className="text-left small"><strong>Location:</strong><span className="ml-1">{user.location.country}</span>{user.location.state}<span className="ml-1">{user.location.street.name}</span>{user.location.street.number}</p>
+                                <p className="text-left small"><strong>Location:</strong><span className="ml-1">{user.location.country}</span>{user.location.state}<span className="ml-1"><br />{user.location.street.name}</span>{user.location.street.number}</p>
                             </div>
                         </div>
                     </article>

@@ -25,11 +25,11 @@ const CreateThemeContent = props => {
 
     return(
         <>
-            <div className="row justify-content-center">
-                    <div className="col-11 text-center px-2 col-md-4 col-lg-3 col-xl-2 mt-1">
-                        <h6 style={{backgroundColor: theme.bgColor}} className="text-xl-center my-3 my-md-0 text-md-right">change the card color</h6> {' '}
+            <div className="d-md-flex justify-content-center align-content-center">
+                    <div className="text-center px-2 pt-1">
+                        <h6 className="text-xl-center my-3 my-md-0 text-md-right">change the card color</h6> {' '}
                     </div>
-                    <div className="border col-11 col-md-5 col-lg-3 d-flex justify-content-between align-content-center">
+                    <div className="border width-md-25 width-sm-100 d-flex justify-content-between align-content-center">
                         <span className="mt-1">{theme.bgColor}</span>
                         <input className="mt-1" type="color" id="bg_color" name="bgColor" value= { theme.bgColor ? theme.bgColor : '#FFFFFF' } onChange={(e) => handleChange(e.target.value)}/>
                     </div>

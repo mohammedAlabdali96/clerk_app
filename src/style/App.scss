@@ -4,3 +4,16 @@
   height: 400px;
   width: 300px;
 }
+
+.width-md-25 {
+  @include media-breakpoint-up(md) {
+   width: 25%;
+  }
+}
+
+
+  .width-xs-100 {
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }

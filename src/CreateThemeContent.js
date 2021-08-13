@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useTheme } from './theme/useTheme';
-import {setToLS} from "./utils/storage";
 
 
 

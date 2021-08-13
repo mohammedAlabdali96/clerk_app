@@ -76,7 +76,7 @@ const Carousel = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* You can alwas change the content of the button to other things */}
+                {/* You can allows change the content of the button to other things */}
                 {
                     currentIndex < (length - show) &&
                     <button onClick={next} className="arrow-btn">

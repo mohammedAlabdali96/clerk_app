@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-//👇
-//a Util function that will conver the absolute width into breakpoints
+//a Util function that will convert the absolute width into breakpoints
 function getBreakPoint(windowWidth) {
     if (windowWidth) {
         if (windowWidth < 480) {
@@ -37,7 +36,7 @@ function useWindowSize() {
             //register the window resize listener
             window.addEventListener("resize", setSize);
 
-            //unregister the listerner on destroy of the hook
+            //unregister the listener on destroy of the hook
             return () => window.removeEventListener("resize", setSize);
         }
     }, [isWindowClient, setWindowSize]);

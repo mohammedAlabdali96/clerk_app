@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider } from "styled-components";
-import { GlobalStyles } from '../theme/GlobalStyles';
-import {useTheme} from '../theme/useTheme';
-import CreateThemeContent from "../CreateThemeContent";
+import React from 'react';
 
 
 const Card = ({user}) => {
-
-
-
-    // 4: Load all the fonts
     return (
         <>
 

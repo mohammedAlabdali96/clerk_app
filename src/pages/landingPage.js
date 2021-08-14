@@ -38,7 +38,6 @@ const LandingPage = () => {
     if (isLoading) {
         return <div className="container-fluid mt-10 text-center">Loading</div>;
     }
-    console.log(data.results.length)
 
 
 
@@ -79,7 +78,6 @@ const LandingPage = () => {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     };
-    console.log(windowSize)
 
     return (
         <>

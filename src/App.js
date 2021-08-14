@@ -9,7 +9,7 @@ function App() {
     const {theme, themeLoaded, setMode} = useTheme();
     const [newTheme, setNewTheme] = useState(theme);
     if (!themeLoaded) return null;
-    if(!theme) return  null
+    if (!theme) return null
     const setColor = (t) => {
         setNewTheme(t);
         setMode(t);

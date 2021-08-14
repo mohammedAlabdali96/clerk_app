@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
 
 //a Util function that will convert the absolute width into breakpoints
 function getBreakPoint(windowWidth) {

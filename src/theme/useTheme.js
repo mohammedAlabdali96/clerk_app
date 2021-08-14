@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import { setToLS, getFromLS } from '../utils/storage';
+import {useEffect, useState} from 'react';
+import {getFromLS, setToLS} from '../utils/storage';
 
 export const useTheme = () => {
     const defaultTheme = getFromLS('defaultTheme');
     const [theme, setTheme] = useState(defaultTheme);
     const [themeLoaded, setThemeLoaded] = useState(false);
-    const [themeIsSet, setThemeIsSet] = useState(false)
 
     const setMode = mode => {
         setToLS('theme', mode)
@@ -19,5 +18,5 @@ export const useTheme = () => {
         setThemeLoaded(true);
     }, []);
 
-    return { theme, themeLoaded, setMode };
+    return {theme, themeLoaded, setMode};
 };

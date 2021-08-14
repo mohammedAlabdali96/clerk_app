@@ -11,10 +11,14 @@
 @import "node_modules/bootstrap/scss/grid";
 @import "node_modules/bootstrap/scss/bootstrap-grid";
 @import "node_modules/bootstrap/scss/navbar";
+@import "/node_modules/slick-carousel/slick/slick.css";
+@import "/node_modules/slick-carousel/slick/slick-theme.css";
+
 
 @import "variables";
 @import "App";
 // import the Component
 @import "carousel.css";
+// Import css files
 /* finally, import Bootstrap */
 @import "node_modules/bootstrap/scss/bootstrap.scss";

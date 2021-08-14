@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 //a Util function that will convert the absolute width into breakpoints
 function getBreakPoint(windowWidth) {
     if (windowWidth) {
-        if (windowWidth < 480) {
+        if (windowWidth < 580) {
             return "sm";
         } else if (windowWidth < 1024) {
             return "md";

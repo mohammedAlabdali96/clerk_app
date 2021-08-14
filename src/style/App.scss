@@ -2,7 +2,7 @@
   padding-left: 57px;
   padding-right: 57px;
   height: 400px;
-  width: 300px;
+  width: 320px;
   @include media-breakpoint-down(md) {
     width: 400px;
 
@@ -21,3 +21,4 @@
       width: 100%;
     }
   }
+  

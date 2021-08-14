@@ -22,6 +22,8 @@ function App() {
                 <GlobalStyles/>
 
                 <header className="my-4 container-fluid">
+                    <h3 className="text-center my-3">My Clerks</h3>
+
                     <CreateThemeContent newTheme={newTheme} setColor={setColor}/>
                 </header>
                 <LandingPage/>

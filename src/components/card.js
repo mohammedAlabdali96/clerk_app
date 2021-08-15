@@ -6,7 +6,7 @@ const Card = ({user}) => {
         <>
             <article className="py-5 mx-2 card-carousal">
                 <div className="d-flex justify-content-center align-content-center">
-                    <img width="100" height="100" src={user.picture.medium} className="rounded-circle"/>
+                    <img width="100" height="100" alt=" " src={user.picture.medium} className="rounded-circle"/>
                 </div>
                 <div className=" mt-5">
                     <div className="d-flex justify-content-start align-content-center my-2">
